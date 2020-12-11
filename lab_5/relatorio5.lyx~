@@ -1,0 +1,1334 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{titlesec}
+
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalfont}
+\titleformat*{\subsubsection}{\small\bfseries}
+\titleformat*{\paragraph}{\small\bfseries}
+\titleformat*{\subparagraph}{\small\bfseries}
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+
+
+
+
+\newcommand{\titulo}{Prática 5 Saturação Magnética}
+%\newcommand{\turma}{1}
+\newcommand{\materia}{Conversão Eletromecânica de Energia I}
+\newcommand{\turma}{Turma 1}
+\newcommand{\nome}{Fernando Lopes Cardoso}
+
+\newcommand{\cabecalho}{\textbf{\Large \titulo}\\{\normalsize Universidade do Estado do Rio de Janeiro \\ \materia \\ \turma \\\nome\\\vspace{-1.45cm}}}
+\title{\cabecalho}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\fancyhf{}
+\fancyhead[RO,LE]{\materia}
+\fancyhead[LO,RE]{\titulo}
+%\fancyhead[RO,LE]{\thepage}
+%\pagestyle{headings}
+\fancyfoot[CE,CO]{ }
+\fancyfoot[CE,CO]{\thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+\end_preamble
+\options fleqn
+\use_default_options false
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "helvet" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 95 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine biblatex-natbib
+\cite_engine_type authoryear
+\biblio_style siam
+\biblatex_bibstyle authoryear
+\biblatex_citestyle authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introdução
+\end_layout
+
+\begin_layout Standard
+\align block
+Muitas vezes, para efeitos simples, os efeitos de saturação magnética são
+ ignorados.
+ Entretanto, para algumas aplicações considerar este efeito é de suma importânci
+a.
+ Os efeitos de da saturação magnética serão simulados com o programa 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "FEMM"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Objetivo
+\end_layout
+
+\begin_layout Standard
+Verificar via simulação os efeitos da saturação magnética para o núcleo
+ de ferro representado na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Representação-plana-do-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação plana do corpo de prova com 2cm de profundidade.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Representação-plana-do-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename colado1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "github"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+A curva de magnetização utilizada está representada na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Representação-plana-do-1-1-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva de magnetização utilizada.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Representação-plana-do-1-1-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename colado2.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (O autor, 2020)
+\end_layout
+
+\end_inset
+
+Com o perfil não linear do material, o esperado que quando o conforme o
+ gap do entreferro varie, afetando assim o fluxo magnético que flui pelo
+ circuito, e deslocando assim a faixa de operação do circuito.
+\end_layout
+
+\begin_layout Section
+Procedimentos
+\end_layout
+
+\begin_layout Standard
+A curva de magnetização descrita na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Representação-plana-do-1-1-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ foi gerada por um conjunto de pontos que foi importado no programa FEMM.
+ O circuito magnético descrito na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Representação-plana-do-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ deve ser construído no FEMM, conforme mostra a figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Representação-plana-do-1-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ com um total de 30 espiras
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+O valor utilizado é diferente do citado no roteiro 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "github"
+literal "false"
+
+\end_inset
+
+ para facilitar a visualização do efeito.
+ 
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação do modelo construído no FEMM.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Representação-plana-do-1-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename colado3.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Adaptado de 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "github"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com o intuito de levantar a curva de fluxo concatenado por corrente, obtendo
+ assim a indutância do circuito, deve-se fixar um valor de gap e variar
+ a corrente.
+ Os valores de gap que serão utilizados são 
+\begin_inset Formula $g=0.001mm$
+\end_inset
+
+, 
+\begin_inset Formula $g=0.05mm$
+\end_inset
+
+, 
+\begin_inset Formula $g=0.1mm$
+\end_inset
+
+ e 
+\begin_inset Formula $g=0.5mm$
+\end_inset
+
+.
+ Para cada um destes gaps a corrente será variada de 0 a 20A com 2A de passo.
+ Para facilitar o processo de aquisição de dados foi criado um script em
+ lua para variar a corrente do circuito da bobina e uma função para variar
+ de forma manual a posição do núcleo 
+\begin_inset Quotes eld
+\end_inset
+
+I
+\begin_inset Quotes erd
+\end_inset
+
+ em ralação ao núcleo 
+\begin_inset Quotes eld
+\end_inset
+
+U
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "fernando"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Resultados e Discussão
+\end_layout
+
+\begin_layout Standard
+Os dados coletados nas simulações estão representados na tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Curvas-de-indutância"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curvas de indutância
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Curvas-de-indutância"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I(A)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda$
+\end_inset
+
+ [
+\begin_inset Formula $g=0.01$
+\end_inset
+
+](We)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda$
+\end_inset
+
+ [
+\begin_inset Formula $g=0.05$
+\end_inset
+
+](We)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda$
+\end_inset
+
+ [
+\begin_inset Formula $g=0.1$
+\end_inset
+
+](We)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda$
+\end_inset
+
+ [
+\begin_inset Formula $g=0.5$
+\end_inset
+
+](We)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,004556276
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,000831677 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,000492579 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,000156541 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,00955856 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,001848298 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,001017625 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,000313289 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,012555589 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,002926805 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,00157812 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,000470454 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,014368194 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,003997161 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,002153907 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,000628239 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,015573489 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,005055018 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,002732963 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,000786771 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,016638003 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,006104971 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,003311135 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,000946055 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,017663228 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,007149627 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,003887472 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,001106032 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,018670849 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,008183941 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,00446188 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,001266606 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,019667775 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,009193135 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,005034647 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,001427666 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,020656467
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,010166216
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,005606143
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,001589108
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (O autor, 2020)
+\end_layout
+
+\end_inset
+
+O o gráfico apresentado na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Representação-plana-do-1-1-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ foi feito com base nos dados da tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Curvas-de-indutância"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação do modelo construído no FEMM.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Representação-plana-do-1-1-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename colado5.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (O autor, 2020)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como esperado, não linearidade do material causa uma não linearidade da
+ indutância.
+ Isso pode ser facilmente entendido, uma vez que a não linearidade entre
+ os campos 
+\begin_inset Formula $B$
+\end_inset
+
+ e 
+\begin_inset Formula $H$
+\end_inset
+
+ introduz uma permeabilidade magnética não contante, dependendo assim do
+ campo 
+\begin_inset Formula $H$
+\end_inset
+
+ de forna não trivial.
+ E como este por sua vez dependente da corrente elétrica (para o caso estudado
+ neste trabalho) a permeabilidade acaba dependendo de forma não linear da
+ corrente elétrica que por sua vez gera uma indutância não linear.
+ 
+\begin_inset Formula 
+\begin{equation}
+\lambda=L(i)i.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusão
+\end_layout
+
+\begin_layout Standard
+Era esperado que uma relação não linear entre os campos campos 
+\begin_inset Formula $B$
+\end_inset
+
+ e 
+\begin_inset Formula $H$
+\end_inset
+
+ fosse causar uma não linearidade na indutância 
+\begin_inset Formula $L(i)$
+\end_inset
+
+ e de fato isto ocorreu.
+ A justificativa de por que esse efeito foi mais intensamente observado
+ para o menor valor de gap e de forma menos intensa para os maiores é bem
+ simples.
+ O tamanho do entreferro afeta diretamente a quantidade de fluxo magnético
+ que flui pelo sistema, valores menores de entreferro permitem fluxos maiores,
+ de forma qualitativa
+\begin_inset Formula 
+\begin{equation}
+\phi_{M}=A\cdot B\sim\frac{1}{g}
+\end{equation}
+
+\end_inset
+
+desta forma, maiores valores de entreferro 
+\begin_inset Formula $g$
+\end_inset
+
+ introduzem menores valores para o campo 
+\begin_inset Formula $B$
+\end_inset
+
+ com isso, o a relação entre o 
+\begin_inset Formula $B$
+\end_inset
+
+ e o 
+\begin_inset Formula $H$
+\end_inset
+
+ se limitam a ficar na parte inicial do gráfico representado na 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Representação-plana-do-1-1-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, uma região aproximadamente linear.
+ Para valores mais baixos de 
+\begin_inset Formula $g$
+\end_inset
+
+, a relação entre 
+\begin_inset Formula $B$
+\end_inset
+
+ e o 
+\begin_inset Formula $H$
+\end_inset
+
+ abrangem mais regiões da curva.
+ Conforme a corrente elétrica do circuito cresce, a relação entre 
+\begin_inset Formula $B$
+\end_inset
+
+ e o 
+\begin_inset Formula $H$
+\end_inset
+
+ são empurradas para a segunda parte do gráfico e também devem ter comportamento
+s aproximadamente lineares.
+ Basta aproximar o gráfico da figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Representação-plana-do-1-1-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ para um modelo Bilinear com relação ao ponto 
+\begin_inset Formula $H=1000A/m$
+\end_inset
+
+ se o sistema apresentar valores no entorno de 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+H=1000A/m, a não linearidade será fortemente observada, caso o sistema esteja
+ muito abaixo ou muito acima deste valor de campo a não linearidade não
+ deve ser facilmente observada.
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "bibliografia"
+options "apalike"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
